@@ -1,50 +1,48 @@
-
 # Address Validation (GAS)
 
 ## Overview
-This script validates address data before it is processed in downstream operations.
+This script validates address data entered by customers in a landing page form by comparing it against Japan Post address reference data.
 
-The goal is not strict validation, but reducing errors while allowing acceptable variations.
+The purpose is to detect likely address issues before the data moves into downstream operations such as shipment, mailing, or manual follow-up.
 
 ---
 
 ## Problem
-Address data often contained inconsistencies such as:
-- format differences
-- missing components
-- non-standard inputs
+Customer-entered address data often contains:
+- missing or incomplete address components
+- formatting inconsistencies
+- entries that do not match expected postal address patterns
 
-Strict validation would reject valid cases, while no validation would increase downstream errors.
+If such data is passed downstream as-is, it can lead to returned mail, manual correction work, and avoidable operational loss.
 
 ---
 
 ## Approach
-- Implemented rule-based validation for common patterns
-- Allowed flexible handling for acceptable variations
-- Focused on reducing obvious errors without blocking valid inputs
+- Compared form-entered address data with Japan Post reference data
+- Flagged likely mismatches and incomplete entries
+- Focused on detecting obvious operational risks before processing
 
 ---
 
 ## Design Decision
-Instead of enforcing strict validation, I chose a balanced approach:
-- prevent clear errors
-- allow non-critical variations
-- maintain operability
+The goal was not to reject every imperfect entry, but to identify cases with a high likelihood of delivery failure or rework.
+
+I chose a practical validation approach that supports operations rather than enforcing unrealistic data perfection.
 
 ---
 
 ## Trade-off
-- Some edge cases may still pass validation
-- However, overall operational friction is significantly reduced
+- Not every edge case can be perfectly validated
+- However, pre-checking obvious mismatches significantly reduces downstream friction
 
 ---
 
 ## Result
-- Reduced manual correction workload
-- Improved data consistency
-- Stabilized downstream processes
+- Reduced avoidable returns and manual correction effort
+- Improved data quality before downstream processing
+- Helped create a more stable operational flow
 
 ---
 
 ## Positioning
-This is an example of designing data validation under real operational constraints, where perfect data is not always achievable.
+This is an example of designing data validation under real operational constraints, using external reference data to reduce operational risk from customer-entered information.

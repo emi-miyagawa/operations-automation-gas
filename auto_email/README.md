@@ -1,3 +1,6 @@
+
+Related article:https://dev.to/emi-miyagawa/thinks-in-systems-and-trade-offs-mhg
+
 # Email Automation
 
 Generates email drafts from spreadsheet data using Google Apps Script.

@@ -13,9 +13,10 @@ Reduce manual email creation and enable batch processing.
 - Structured input from Google Sheets
 - Consistent formatting
 
-## Impact
-- Reduced processing time (~2–3 min → <30 sec per email)
-- Enabled batch handling (30–50 emails/session)
+**Impact**
+- Reduced processing time from ~2–3 min to <30 sec per email  
+- Enabled batch processing (30–50 emails per session)  
+- Reduced manual workload and improved consistency  
 
 ## Trade-offs
 - Not fully automated (manual review required)
